@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TugasAkhirPBO.DesainController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TabPane prefHeight="400.0" prefWidth="903.0" style="-fx-background-color: #00453d;" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Nilai Dosen">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <AnchorPane prefHeight="381.0" prefWidth="215.0" style="-fx-background-color: #ece5dd;">
+                                       <children>
+                                          <Label layoutX="60.0" layoutY="14.0" prefHeight="30.0" prefWidth="102.0" text="NILAI DOSEN" textAlignment="CENTER" textFill="#00453d">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField alignment="CENTER" layoutX="36.0" layoutY="89.0" promptText="NAMA" />
+                                          <TextField alignment="CENTER" layoutX="37.0" layoutY="123.0" promptText="Mata Kuliah" />
+                                          <TextField alignment="CENTER" layoutX="36.0" layoutY="188.0" promptText="Nilai" />
+                                          <Button layoutX="70.0" layoutY="239.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #00453d;" text="Input" textFill="#ece5dd" />
+                                          <Button layoutX="69.0" layoutY="280.0" mnemonicParsing="false" style="-fx-background-color: #FF0000;" text="Clear Table" textFill="#ece5dd" />
+                                          <TextField alignment="CENTER" layoutX="36.0" layoutY="55.0" promptText="NPM" />
+                                          <TextField alignment="CENTER" layoutX="36.0" layoutY="156.0" promptText="Dosen" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                              <AnchorPane layoutX="213.0" prefHeight="372.0" prefWidth="393.0">
+                                 <children>
+                                    <VBox prefHeight="372.0" prefWidth="394.0">
+                                       <children>
+                                          <AnchorPane prefHeight="372.0" prefWidth="394.0">
+                                             <children>
+                                                <TableView layoutX="5.0" layoutY="3.0" prefHeight="371.0" prefWidth="685.0" style="-fx-background-color: #ece5dd;">
+                                                  <columns>
+                                                    <TableColumn prefWidth="126.0" text="NPM" />
+                                                    <TableColumn prefWidth="159.0" text="NAMA" />
+                                                      <TableColumn prefWidth="157.0" text="MATA KULIAH" />
+                                                      <TableColumn prefWidth="125.0" text="DOSEN" />
+                                                      <TableColumn prefWidth="116.0" text="NILAI" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Nilai Praktikum">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <AnchorPane prefHeight="382.0" prefWidth="218.0" style="-fx-background-color: #ece5dd;">
+                                       <children>
+                                          <Label layoutX="38.0" layoutY="23.0" prefHeight="30.0" prefWidth="140.0" text="NILAI PRAKTIKUM" textAlignment="CENTER" textFill="#00453d">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField alignment="CENTER" layoutX="33.0" layoutY="64.0" promptText="NPM" />
+                                          <TextField alignment="CENTER" layoutX="33.0" layoutY="135.0" promptText="Mata Kuliah" />
+                                          <TextField alignment="CENTER" layoutX="33.0" layoutY="166.0" promptText="Nama Asdos" />
+                                          <Button layoutX="71.0" layoutY="256.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #00453d;" text="Input" textFill="#ece5dd" />
+                                          <Button layoutX="70.0" layoutY="297.0" mnemonicParsing="false" style="-fx-background-color: #FF0000;" text="Clear Table" textFill="#ece5dd" />
+                                          <TextField alignment="CENTER" layoutX="33.0" layoutY="100.0" promptText="Nama" />
+                                          <TextField alignment="CENTER" layoutX="33.0" layoutY="202.0" promptText="Nilai" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                              <AnchorPane layoutX="213.0" prefHeight="372.0" prefWidth="393.0">
+                                 <children>
+                                    <VBox prefHeight="372.0" prefWidth="394.0">
+                                       <children>
+                                          <AnchorPane prefHeight="372.0" prefWidth="394.0">
+                                             <children>
+                                                <TableView layoutX="8.0" layoutY="3.0" prefHeight="370.0" prefWidth="682.0" style="-fx-background-color: #ece5dd;">
+                                                   <columns>
+                                                      <TableColumn prefWidth="126.0" text="NPM" />
+                                                      <TableColumn prefWidth="159.0" text="NAMA" />
+                                                      <TableColumn prefWidth="133.0" text="MATA KULIAH" />
+                                                      <TableColumn prefWidth="146.0" text="ASDOS" />
+                                                      <TableColumn prefWidth="117.0" text="NILAI" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
