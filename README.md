@@ -17,10 +17,10 @@ classDiagram
         #DoubleProperty nilai
     }
     class NilaiPraktikum{
-      -StringProperty asdos
+        -StringProperty asdos
     }
     class NilaiDosen{
-      -StringProperty dosen
+        -StringProperty dosen
     }
     class NilaiDataModel{
         Connection con
