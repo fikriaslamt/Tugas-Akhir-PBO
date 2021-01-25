@@ -63,18 +63,36 @@ public class NilaiDataModel {
     
     
      public ObservableList<NilaiDosen> getNilaiDosenbaru(){
-        ObservableList<NilaiDosen> dosen = FXCollections.observableArrayList();
+        ObservableList<NilaiDosen> data = FXCollections.observableArrayList();
         String sql="SELECT `npm`, `nama`,`mk`, `dosen`, `nilai` "
                 + "FROM `nilai` NATURAL JOIN `nilaidosen` "
-                + "ORDER BY name";
+                + "ORDER BY nama";
         try {
             ResultSet rs = con.createStatement().executeQuery(sql);
-
-            
+             while (rs.next()){
+                data.add(new NilaiDosen(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDouble(5)));
+             }
             }catch (SQLException ex) {
             Logger.getLogger(NilaiDataModel.class.getName()).log(Level.SEVERE, null, ex);
         }     
-        return dosen;
+        return data;
+    }
+    
+    
+     public ObservableList<NilaiPraktikum> getNilaiAsdosbaru(){
+        ObservableList<NilaiPraktikum> data = FXCollections.observableArrayList();
+        String sql="SELECT `npm`, `nama`,`mk`, `asdos`, `nilai` "
+                + "FROM `nilai` NATURAL JOIN `nilaipraktikum` "
+                + "ORDER BY nama";
+        try {
+            ResultSet rs = con.createStatement().executeQuery(sql);
+             while (rs.next()){
+                data.add(new NilaiPraktikum(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDouble(5)));
+             }
+            }catch (SQLException ex) {
+            Logger.getLogger(NilaiDataModel.class.getName()).log(Level.SEVERE, null, ex);
+        }     
+        return data;
     }
     
 
