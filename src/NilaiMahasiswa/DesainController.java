@@ -59,7 +59,7 @@ public class DesainController implements Initializable {
     private TableView<NilaiDosen> tabelnilai;
 
     @FXML
-    private TableColumn<NilaiDosen,Integer> kolomnpm;
+    private TableColumn<NilaiDosen, Integer> kolomnpm;
 
     @FXML
     private TableColumn<NilaiDosen, String> kolomnama;
@@ -133,14 +133,7 @@ public class DesainController implements Initializable {
     private NilaiDataModel mdm;
      @FXML
     void HandleClear(ActionEvent event) {
-//            ObservableList<NilaiDosen> data = mdm.getNilaiDosenbaru();
-//            kolomnpm.setCellValueFactory(new PropertyValueFactory<>("npm"));
-//            kolomnama.setCellValueFactory(new PropertyValueFactory<>("nama"));
-//            kolommk.setCellValueFactory(new PropertyValueFactory<>("mk"));
-//            kolomdosen.setCellValueFactory(new PropertyValueFactory<>("dosen"));
-//            kolomnilai.setCellValueFactory(new PropertyValueFactory<>("nilai"));
-//            tabelnilai.setItems(null);
-//            tabelnilai.setItems(data);
+
     }
 
     @FXML
@@ -150,28 +143,28 @@ public class DesainController implements Initializable {
 
     @FXML
     void handleInput(ActionEvent event) {
-            NilaiDosen dosen = new NilaiDosen(Integer.parseInt(tfnpm.getText()),tfnama.getText(),tfmk.getText(),tfdosen.getText(),Double.parseDouble(tfnilai.getText()));
-            
-         try {
-             
-            mdm.InputNilai(dosen);
-        
+        NilaiDosen ndosen = new NilaiDosen(Integer.parseInt(tfnpm.getText()),tfnama.getText(),tfmk.getText(),tfdosen.getText(),Double.parseDouble(tfnilai.getText()));
+        try {
+            mdm.InputNilai(ndosen);
             notif1.setText("Input Berhasil");
-            
-            
-             
-             
              tfnpm.setText("");
              tfnama.setText("");
              tfmk.setText("");
              tfdosen.setText("");
              tfnilai.setText("");
-             
+            ObservableList<NilaiDosen> data = mdm.getNilaiDosenbaru();
+            kolomnpm.setCellValueFactory(new PropertyValueFactory<>("npm"));
+            kolomnama.setCellValueFactory(new PropertyValueFactory<>("nama"));
+            kolommk.setCellValueFactory(new PropertyValueFactory<>("mk"));
+            kolomdosen.setCellValueFactory(new PropertyValueFactory<>("dosen"));
+            kolomnilai.setCellValueFactory(new PropertyValueFactory<>("nilai"));
+            tabelnilai.setItems(null);
+            tabelnilai.setItems(data);
          } catch (SQLException ex) {
              notif1.setText("Input Gagal"); 
              Logger.getLogger(DesainController.class.getName()).log(Level.SEVERE, null, ex);
-             
          }
+            
     }
 
     @FXML
@@ -186,8 +179,14 @@ public class DesainController implements Initializable {
              tfmk2.setText("");
              tfasdos.setText("");
              tfnilai2.setText("");
-             
-             
+             ObservableList<NilaiPraktikum> data = mdm.getNilaiAsdosbaru();
+            kolomnpm2.setCellValueFactory(new PropertyValueFactory<>("npm"));
+            kolomnama2.setCellValueFactory(new PropertyValueFactory<>("nama"));
+            kolommk2.setCellValueFactory(new PropertyValueFactory<>("mk"));
+            kolomasdos2.setCellValueFactory(new PropertyValueFactory<>("asdos"));
+            kolomnilai2.setCellValueFactory(new PropertyValueFactory<>("nilai"));
+            tabelnilai2.setItems(null);
+            tabelnilai2.setItems(data);
          } catch (SQLException ex) {
              notif2.setText("Input Gagal"); 
              Logger.getLogger(DesainController.class.getName()).log(Level.SEVERE, null, ex);
@@ -200,6 +199,7 @@ public class DesainController implements Initializable {
         
    
          try {
+             
              mdm = new NilaiDataModel("MYSQL");
              led1.setText("*");
              led2.setText("*");
