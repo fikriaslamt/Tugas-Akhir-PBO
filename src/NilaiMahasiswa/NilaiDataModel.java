@@ -60,6 +60,11 @@ public class NilaiDataModel {
         
     }
     
+    public void DeleteNilai(String query) throws SQLException{
+        PreparedStatement pst = con.prepareStatement(query);
+        pst.executeUpdate();
+    }
+    
     
     
      public ObservableList<NilaiDosen> getNilaiDosenbaru(){
@@ -77,8 +82,6 @@ public class NilaiDataModel {
         }     
         return data;
     }
-    
-    
      public ObservableList<NilaiPraktikum> getNilaiAsdosbaru(){
         ObservableList<NilaiPraktikum> data = FXCollections.observableArrayList();
         String sql="SELECT `npm`, `nama`,`mk`, `asdos`, `nilai` "
@@ -94,9 +97,5 @@ public class NilaiDataModel {
         }     
         return data;
     }
-    
-
-    
-    
     
 }
