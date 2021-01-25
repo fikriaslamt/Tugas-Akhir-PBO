@@ -34,19 +34,24 @@ classDiagram
         InputNilai()
         getNilaiDosenbaru()
         getNilaiAsdosbaru()
+        DeleteNilai()
     }
     class DesainController{
         initialize()
         handleInput()
         handleInput2()
+        HandleClear()
+        HandleClear2()
     }
     class DBHelper{
-        - String USER
-        - String PASSWORD
-        - String DB
+        -String USER
+        -String PASSWORD
+        -String DB
         getConnection()
     }
 ```
 ### ER Diagram
+```mermaid
 
+```
             
