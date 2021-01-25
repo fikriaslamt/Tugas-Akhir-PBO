@@ -1,7 +1,10 @@
-# Tugas-Akhir-PBO
-# MOHAMMAD FAJAR 1917051014 - MEMBUAT ER DIAGRAM & CLASS DATA MODEL
-# FIKRI ASLAM TAUFIQURRAHMAN 1917051025 - MEMBUAT PROGRAM
-# TEGAR JAYANAGA 1917051071 - MEMBUAT CLASS DIAGRAM & CLASS CONTROLLER
+# Tugas Akhir PBO
+# Sistem Input Nilai Mahasiswa
+> Sistem dapat digunakan untuk perekaman data nilai mahasiswa, dimana terdapat 2 jenis nilai yaitu nilai dari dosen dan nilai praktikum.
+
+MOHAMMAD FAJAR 1917051014 - MEMBUAT ER DIAGRAM & CLASS DATA MODEL
+FIKRI ASLAM TAUFIQURRAHMAN 1917051025 - MEMBUAT PROGRAM
+TEGAR JAYANAGA 1917051071 - MEMBUAT CLASS DIAGRAM & CLASS CONTROLLER
 
 ### Design Class Diagram for JavaFX and Database
 
@@ -10,8 +13,9 @@ classDiagram
     Nilai <|-- NilaiPraktikum
     Nilai <|-- NilaiDosen
     Nilai o-- NilaiDataModel : Data Modeling
-    DesainController --> NilaiDataModel
-    DesainController <.. FormNilai
+    DesainController --> NilaiDataModel : Data Control
+    NilaiDataModel --> DBHelper : DB Connection
+    DesainController <.. Desain : Form Control
 
     class Nilai{
         <<abstract>>
