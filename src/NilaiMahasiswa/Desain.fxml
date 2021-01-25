@@ -31,11 +31,11 @@
                                                 <Font name="Arial Rounded MT Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="tfnama" alignment="CENTER" layoutX="36.0" layoutY="100.0" promptText="NAMA" />
+                                          <TextField fx:id="tfnama" alignment="CENTER" layoutX="36.0" layoutY="100.0" promptText="Nama" />
                                           <TextField fx:id="tfmk" alignment="CENTER" layoutX="36.0" layoutY="136.0" promptText="Mata Kuliah" />
                                           <TextField fx:id="tfnilai" alignment="CENTER" layoutX="36.0" layoutY="208.0" promptText="Nilai" />
-                                          <Button fx:id="btninput" layoutX="70.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #00453d;" text="Input" textFill="#ece5dd" />
-                                          <Button fx:id="btnclear" layoutX="70.0" layoutY="297.0" mnemonicParsing="false" onAction="#HandleClear" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #FF0000;" text="Clear Table" textFill="#ece5dd" />
+                                          <Button fx:id="btninput" layoutX="70.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #00453d;" text="Input" textFill="#ece5dd" />
+                                          <Button fx:id="btnclear" layoutX="70.0" layoutY="297.0" mnemonicParsing="false" onAction="#HandleClear" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #FF0000;" text="Hapus Data" textFill="#ece5dd" />
                                           <TextField fx:id="tfnpm" alignment="CENTER" layoutX="36.0" layoutY="64.0" promptText="NPM" />
                                           <TextField fx:id="tfdosen" alignment="CENTER" layoutX="36.0" layoutY="172.0" promptText="Dosen" />
                                           <Label fx:id="notif1" layoutX="48.0" layoutY="340.0" prefHeight="15.0" prefWidth="119.0" style="-fx-background-color: #ece5dd;" textAlignment="CENTER" textFill="RED" />
@@ -86,7 +86,7 @@
                                           <TextField fx:id="tfmk2" alignment="CENTER" layoutX="33.0" layoutY="136.0" promptText="Mata Kuliah" />
                                           <TextField fx:id="tfasdos" alignment="CENTER" layoutX="33.0" layoutY="172.0" promptText="Nama Asdos" />
                                           <Button fx:id="btninput2" layoutX="71.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleInput2" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #00453d;" text="Input" textFill="#ece5dd" />
-                                          <Button fx:id="btnclear2" layoutX="70.0" layoutY="297.0" mnemonicParsing="false" style="-fx-background-color: #FF0000;" text="Clear Table" textFill="#ece5dd" />
+                                          <Button fx:id="btnclear2" layoutX="70.0" layoutY="297.0" mnemonicParsing="false" onAction="#HandleClear2" style="-fx-background-color: #FF0000;" text="Hapus Data" textFill="#ece5dd" />
                                           <TextField fx:id="tfnama2" alignment="CENTER" layoutX="33.0" layoutY="100.0" promptText="Nama" />
                                           <TextField fx:id="tfnilai2" alignment="CENTER" layoutX="33.0" layoutY="208.0" promptText="Nilai" />
                                           <Label fx:id="notif2" layoutX="48.0" layoutY="340.0" prefHeight="15.0" prefWidth="119.0" textAlignment="CENTER" textFill="RED" />
