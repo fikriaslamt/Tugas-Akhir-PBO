@@ -66,7 +66,7 @@ public class NilaiDataModel {
         ObservableList<NilaiDosen> data = FXCollections.observableArrayList();
         String sql="SELECT `npm`, `nama`,`mk`, `dosen`, `nilai` "
                 + "FROM `nilai` NATURAL JOIN `nilaidosen` "
-                + "ORDER BY nama";
+                + "ORDER BY npm";
         try {
             ResultSet rs = con.createStatement().executeQuery(sql);
              while (rs.next()){
@@ -83,7 +83,7 @@ public class NilaiDataModel {
         ObservableList<NilaiPraktikum> data = FXCollections.observableArrayList();
         String sql="SELECT `npm`, `nama`,`mk`, `asdos`, `nilai` "
                 + "FROM `nilai` NATURAL JOIN `nilaipraktikum` "
-                + "ORDER BY nama";
+                + "ORDER BY npm";
         try {
             ResultSet rs = con.createStatement().executeQuery(sql);
              while (rs.next()){
