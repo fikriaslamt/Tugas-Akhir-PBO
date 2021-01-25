@@ -3,7 +3,7 @@
 # FIKRI ASLAM TAUFIQURRAHMAN 1917051025 - MEMBUAT PROGRAM
 # TEGAR JAYANAGA 1917051071 - MEMBUAT CLASS DIAGRAM & CLASS CONTROLLER
 
-### Class Diagram
+### Design Class Diagram for JavaFX and Database
 
 ```mermaid
 classDiagram
@@ -28,11 +28,20 @@ classDiagram
     }
     class NilaiDataModel{
         Connection con
-        +void Input()
-        +void InputNilai()
+        InputNilai()
+        getNilaiDosenbaru()
+        getNilaiAsdosbaru()
     }
     class DesainController{
-    
+        initialize()
+        handleInput()
+        handleInput2()
+    }
+    class DBHelper{
+        - String USER
+        - String PASSWORD
+        - String DB
+        getConnection()
     }
 ```
 ### ER Diagram
