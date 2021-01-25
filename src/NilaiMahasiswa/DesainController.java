@@ -6,6 +6,8 @@
 package NilaiMahasiswa;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -22,6 +24,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -133,12 +136,41 @@ public class DesainController implements Initializable {
     private NilaiDataModel mdm;
      @FXML
     void HandleClear(ActionEvent event) {
-
+        
+        try {
+            String sql = "DELETE FROM `nilai` WHERE `nilai`.`npm` = "+tfnpm.getText();
+            mdm.DeleteNilai(sql);
+            JOptionPane.showMessageDialog(null, "Data sudah Dihapus");
+            ObservableList<NilaiDosen> data = mdm.getNilaiDosenbaru();
+            kolomnpm.setCellValueFactory(new PropertyValueFactory<>("npm"));
+            kolomnama.setCellValueFactory(new PropertyValueFactory<>("nama"));
+            kolommk.setCellValueFactory(new PropertyValueFactory<>("mk"));
+            kolomdosen.setCellValueFactory(new PropertyValueFactory<>("dosen"));
+            kolomnilai.setCellValueFactory(new PropertyValueFactory<>("nilai"));
+            tabelnilai.setItems(null);
+            tabelnilai.setItems(data);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 
     @FXML
-    void HandleClear2(ActionEvent event) {
-           
+    void HandleClear2(ActionEvent event){
+        try {
+            String sql = "DELETE FROM `nilai` WHERE `nilai`.`npm` = "+tfnpm2.getText();
+            mdm.DeleteNilai(sql);
+            JOptionPane.showMessageDialog(null, "Data sudah Dihapus");
+            ObservableList<NilaiPraktikum> data = mdm.getNilaiAsdosbaru();
+            kolomnpm2.setCellValueFactory(new PropertyValueFactory<>("npm"));
+            kolomnama2.setCellValueFactory(new PropertyValueFactory<>("nama"));
+            kolommk2.setCellValueFactory(new PropertyValueFactory<>("mk"));
+            kolomasdos2.setCellValueFactory(new PropertyValueFactory<>("asdos"));
+            kolomnilai2.setCellValueFactory(new PropertyValueFactory<>("nilai"));
+            tabelnilai2.setItems(null);
+            tabelnilai2.setItems(data);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 
     @FXML
@@ -203,9 +235,8 @@ public class DesainController implements Initializable {
              mdm = new NilaiDataModel("MYSQL");
              led1.setText("*");
              led2.setText("*");
-            
-            
-            ObservableList<NilaiDosen> data1 = mdm.getNilaiDosenbaru();
+             
+             ObservableList<NilaiDosen> data1 = mdm.getNilaiDosenbaru();
             kolomnpm.setCellValueFactory(new PropertyValueFactory<>("npm"));
             kolomnama.setCellValueFactory(new PropertyValueFactory<>("nama"));
             kolommk.setCellValueFactory(new PropertyValueFactory<>("mk"));
