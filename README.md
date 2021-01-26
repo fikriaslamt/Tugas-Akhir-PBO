@@ -1,4 +1,5 @@
 # Tugas Akhir Pemrograman Berorientasi Objek : Sistem Input Nilai Mahasiswa
+> Pada penugasan final project ini kelompok kami membuat sebuah program tentang Sistem Input Nilai Mahasiswa
 > Sistem dapat digunakan untuk perekaman data nilai mahasiswa, dimana terdapat 2 jenis nilai yaitu nilai dari dosen dan nilai praktikum.
 > User dapat menginput data nilai mahasiswa dengan mengisi form lalu klik tombol input.
 > User juga dapat menghapus data nilai mahasiswa dengan memasukkan NPM data yang ingin dihapus lalu klik hapus data.
@@ -54,6 +55,28 @@ classDiagram
 ```
 ### ER Diagram
 ```mermaid
-
+erDiagram
+          Nilai ||..||
+          Nilai-Praktikum : is
+          Nilai ||..||
+          Nilai-Dosen : is
+          Nilai ||..||{ Nilai :
+          "has"
+          Nilai {
+            int npm
+            string nama
+            string mk
+            double nilai
+          }
+          Nilai-Praktikum{
+            string asdos
+          }
+          Nilai-Dosen{
+            string dosen
+          }
+          Nilai{
+            int acc_nilai
+            double balance
+          }
 ```
             
