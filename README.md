@@ -56,24 +56,23 @@ classDiagram
 ### ER Diagram
 ```mermaid
 erDiagram
-          Nilai ||..||
-          Nilai-Praktikum : is
-          Nilai ||..||
-          Nilai-Dosen : is
-          Nilai ||..||{ Nilai :
-          "has"
-          Nilai {
+         NILAI ||..|| NILAI-PRAKTIKUM : is
+          NILAI ||--|| NILAI-DOSEN : is
+          
+          NILAI {
             int npm
             string nama
             string mk
             double nilai
           }
-          Nilai-Praktikum{
+          NILAI-PRAKTIKUM{
             string asdos
+            
           }
-          Nilai-Dosen{
+          NILAI-DOSEN{
             string dosen
           }
+          
           
 ```
             
